@@ -1,6 +1,11 @@
 package com.tek.crm.object_repository;
 
 import org.openqa.selenium.WebDriver;
+/**
+@author Tushar:
+Elements of OrganizationCreatedPage
+**/
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

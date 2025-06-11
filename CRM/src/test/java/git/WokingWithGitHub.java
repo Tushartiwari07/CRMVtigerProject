@@ -7,6 +7,6 @@ public class WokingWithGitHub {
 	public void gitTest()
 	{
 		System.out.println("=========GitHub=====");
+		System.out.println();
 	}
-
-}
+} 
