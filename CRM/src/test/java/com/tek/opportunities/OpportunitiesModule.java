@@ -23,7 +23,7 @@ import com.tek.crm.webdriverutility.WebDriverUtility;
 @Listeners(com.tek.crm.genericutility.ListnerImplimentation.class)
 
 public class OpportunitiesModule extends BaseClass {
-	@Test(priority = 1)
+	@Test(groups = "smokeTest", priority = 1)
 	public void createopportunitiesAndRelateToContact() throws FileNotFoundException, IOException, ParseException, InterruptedException
 	{		
 				//To read TestScript Data From Excel
@@ -61,7 +61,7 @@ public class OpportunitiesModule extends BaseClass {
 
 	}
 
-	@Test(priority = 2)
+	@Test(groups = "smokeTest",priority = 2)
 	public void opportunitiesAndRelateOrg() throws FileNotFoundException, IOException, ParseException, InterruptedException
 	{
 		String orgName = elib.getStringDataFromExcel("organization", 1, 1)+jlib.ramdonNumber();

@@ -14,7 +14,7 @@ import com.tek.crm.object_repository.ProductPage;
 @Listeners(com.tek.crm.genericutility.ListnerImplimentation.class)
 
 public class ProductModule extends BaseClass {
-	@Test
+	@Test(groups = "smokeTest", priority = 1)
 	public void productCreate() throws FileNotFoundException, IOException
 	{
 		//To read TestScript Data From Excel
@@ -32,7 +32,7 @@ public class ProductModule extends BaseClass {
 			Assert.assertEquals(proCreated.getActualProductName().getText(),productName);
 	}
 
-	@Test
+	@Test(groups = "regressionTest",priority = 2)
 	public void productWithStartandEndDate() throws EncryptedDocumentException, IOException, ParseException
 	{
 		String productName = elib.getStringDataFromExcel("organization", 1, 7)+jlib.ramdonNumber();	
