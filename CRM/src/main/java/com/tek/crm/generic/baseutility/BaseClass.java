@@ -62,7 +62,8 @@ public class BaseClass {
 	@BeforeClass(groups = { "smokeTest", "regressionTest" })
 	public void lunchBrowser(@Optional("chrome") String xmlBrowser) throws Exception {
 //		String browser = jsonlib.getDataFromJson("Browser");
-		String url = jsonlib.getDataFromJson("Url");
+//		String url = jsonlib.getDataFromJson("Url");
+		String url=System.getProperty("url",jsonlib.getDataFromJson("Url"));
 
 //		String browser = xmlBrowser;
 //		String browser= jsonlib.getDataFromJson("browser");
@@ -76,6 +77,7 @@ public class BaseClass {
 		} else {
 			driver = new ChromeDriver();
 		}
+		System.out.println("B:"+browser);
 		UtilityClassObject.setDriver(driver);
 		wlib = new WebDriverUtility(driver);
 		wlib.maximizeBrowser(driver);
@@ -85,8 +87,11 @@ public class BaseClass {
 
 	@BeforeMethod(groups = { "smokeTest", "regressionTest" })
 	public void login() throws FileNotFoundException, IOException, ParseException {
-		String username = jsonlib.getDataFromJson("Username");
-		String password = jsonlib.getDataFromJson("Password");
+//		String username = jsonlib.getDataFromJson("Username");
+//		String password = jsonlib.getDataFromJson("Password");
+		String username=System.getProperty("userName",jsonlib.getDataFromJson("Username"));
+		String password=System.getProperty("passWord",jsonlib.getDataFromJson("Password"));
+
 		lp = new LoginPage(driver);
 		lp.login(username, password);
 	}

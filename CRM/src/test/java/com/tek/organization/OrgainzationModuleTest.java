@@ -77,7 +77,7 @@ public class OrgainzationModuleTest extends BaseClass {
 		orginfo.getOrganizationNameTextFiled().sendKeys(orgName);
 
 			wlib = new WebDriverUtility(orginfo.getIndustryDropDown());
-			wlib.selectByValue(industry);
+			wlib.selectByValue(industry); 
 			wlib = new WebDriverUtility(orginfo.getTypeDropDown());
 			wlib.selectByValue(type);
 			orginfo.getSaveBtn().click();					

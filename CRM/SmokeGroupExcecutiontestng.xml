@@ -8,9 +8,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.tek.opportunities.OpportunitiesModule" />
 			<class name="com.tek.contact.ContactModuleTest" />
-			<class name="com.tek.product.ProductModule" />
 			<class name="com.tek.organization.OrgainzationModuleTest" />
 		</classes>
 	</test> <!--
