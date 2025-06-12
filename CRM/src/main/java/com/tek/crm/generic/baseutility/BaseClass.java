@@ -64,7 +64,9 @@ public class BaseClass {
 //		String browser = jsonlib.getDataFromJson("Browser");
 		String url = jsonlib.getDataFromJson("Url");
 
-		String browser = xmlBrowser;
+//		String browser = xmlBrowser;
+//		String browser= jsonlib.getDataFromJson("browser");
+		String browser=System.getProperty("browser",jsonlib.getDataFromJson("Browser"));
 		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
@@ -89,7 +91,7 @@ public class BaseClass {
 		lp.login(username, password);
 	}
 
-	@AfterMethod(groups = { "smokeTest", "regressionTest" })
+	@AfterMethod(groups = {"smokeTest", "regressionTest"})
 	public void logOut() {
 		sAssert.assertAll();
 		hp = new HomePage(driver);
